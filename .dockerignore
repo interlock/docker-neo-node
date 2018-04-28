@@ -1,0 +1,6 @@
+Makefile
+LICENSE
+README.md
+*.zip
+.git
+cache/*

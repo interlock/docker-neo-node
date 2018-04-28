@@ -10,16 +10,16 @@ apt-get install -y --no-install-recommends unzip curl libleveldb-dev sqlite3 lib
 rm -rf /var/lib/apt/lists/*
 
 RUN curl -SL $NEO_DOWNLOAD_URL --output neo-cli.zip && \
-install -d /opt && install -d /chain && \
+install -d /opt && install -d /chain /opt/cache && \
 unzip -d /opt neo-cli.zip neo-cli/* && \
 rm neo-cli.zip
 
 COPY config.json /opt/neo-cli/config.json
 COPY start.sh /opt/neo-cli/start.sh
 
-VOLUME ["/chain"]
+VOLUME ["/chain", "/opt/cache"]
 
 EXPOSE 10332/tcp 10333/tcp 10334/tcp
 
 WORKDIR /opt/neo-cli
-CMD ["dotnet", "neo-cli.dll", "/rpc"]
+CMD ["start.sh"]
