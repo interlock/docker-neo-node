@@ -14,5 +14,6 @@ download-seed:
 run-mount:
 	docker run -it --rm \
 		--mount type=bind,source="$(shell pwd)/cache",target=/opt/cache \
+		--mount type=bind,source="$(shell pwd)/chain",target=/chain \
 		neo-node:dev \
 		bash
