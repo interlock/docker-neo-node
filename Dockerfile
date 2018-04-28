@@ -1,7 +1,7 @@
 FROM microsoft/dotnet:2-sdk
 
-ENV NEO_VERSION=2.7.1
-ENV NEO_DOWNLOAD_URL=https://github.com/neo-project/neo-cli/releases/download/v$NEO_VERSION/neo-cli-ubuntu.16.04-x64.zip
+ENV NEO_VERSION=2.7.4
+ENV NEO_DOWNLOAD_URL=https://github.com/neo-project/neo-cli/releases/download/v$NEO_VERSION/neo-cli-linux-x64.zip
 
 
 # neo-cli deps
@@ -15,6 +15,7 @@ unzip -d /opt neo-cli.zip neo-cli/* && \
 rm neo-cli.zip
 
 COPY config.json /opt/neo-cli/config.json
+COPY start.sh /opt/neo-cli/start.sh
 
 VOLUME ["/chain"]
 
