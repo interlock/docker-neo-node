@@ -3,4 +3,5 @@ LICENSE
 README.md
 *.zip
 .git
+.gitignore
 cache/*
