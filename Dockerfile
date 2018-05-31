@@ -22,4 +22,4 @@ VOLUME ["/chain", "/opt/cache"]
 EXPOSE 10332/tcp 10333/tcp 10334/tcp
 
 WORKDIR /opt/neo-cli
-CMD ["start.sh"]
+ENTRYPOINT ["sh", "start.sh"]

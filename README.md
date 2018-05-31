@@ -16,5 +16,5 @@ Neo Node for Docker
 ## Example
 
 ```shell
-docker exec -it --rm interlock/neo-node:latest
+docker run -it --rm interlock/neo-node:latest
 ```
